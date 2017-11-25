@@ -5,7 +5,7 @@ function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   colorMode(HSL);
   frameRate(60);
-  speed = 1;
+  speed = 3;
   offset = createVector(width, height).div(max(width, height)).mult(speed/1000)
   bgColor = "#06001488";
   var numStars = 6400;
