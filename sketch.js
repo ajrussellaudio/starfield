@@ -3,10 +3,11 @@ var offset, bgColor, speed;
 
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
-  offset = createVector(0.003, 0.002);
+  colorMode(HSL);
+  speed = 2;
+  offset = createVector(width, height).div(max(width, height)).div(speed).div(250);
   bgColor = "#111122CC";
-  speed = 4;
-  var numStars = 800;
+  var numStars = 3200;
   stars = new Array(numStars).fill(0).map(function (n) {
     return new Star();
   });
@@ -21,16 +22,4 @@ function draw() {
     star.update(speed);
     star.display();
   })
-}
-
-function mousePressed() {
-  offset = createVector(0, 0);
-  speed = 10;
-  bgColor = "#11112211"
-}
-
-function mouseReleased() {
-  offset = createVector(0.003, 0.002);
-  speed = 4;
-  bgColor = "#111122CC"
 }
