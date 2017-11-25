@@ -4,9 +4,10 @@ var offset, bgColor, speed;
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   colorMode(HSL);
-  speed = 2;
-  offset = createVector(width, height).div(max(width, height)).div(speed).div(250);
-  bgColor = "#111122CC";
+  frameRate(60);
+  speed = 0.4;
+  offset = createVector(width, height).div(max(width, height)).mult(speed/1000)
+  bgColor = "#060014AA";
   var numStars = 3200;
   stars = new Array(numStars).fill(0).map(function (n) {
     return new Star();
