@@ -4,8 +4,8 @@ function Star() {
   this.z = random(max(width/2, height/2));
 }
 
-Star.prototype.update = function () {
-  this.z -= 4;
+Star.prototype.update = function (speed) {
+  this.z -= speed;
   if (this.z < 1) {
     this.z = max(width/2, height/2);
     this.x = random(-width/2, width/2);
